@@ -16,6 +16,17 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            .project-text { flex: 1 1 auto; }
+            .project-media { flex: 0 0 300px; align-self: stretch; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+            .project-media-fit .project-img { width: 300px; max-width: 100%; height: auto; display: block; }
+            .project-media-cover { min-height: 400px; }
+            .project-media-cover .project-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+            @media (max-width: 767.98px) {
+                .project-media { flex: 0 0 auto; width: 100%; }
+                .project-media-cover { min-height: 360px; }
+            }
+        </style>
     </head>
     <body class="d-flex flex-column h-100 bg-light">
         <main class="flex-shrink-0">
@@ -47,11 +58,11 @@
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
                                     <div class="d-flex flex-column flex-md-row align-items-center">
-                                        <div class="p-3 p-md-5">
-                                            <h2 class="fw-bolder fs-4">AI Knowledge Assistant for Industrial Maintenance</h2>
+                                        <div class="p-3 p-md-5 project-text">
+                                            <h2 class="fw-bolder fs-4">Crane Maintenance AI Assistant: Knowledge-Graph RAG with Expert Routing</h2>
                                             <p>Contributed to an AI knowledge platform that turns crane maintenance manuals into a Neo4j knowledge graph and answers technicians' questions with retrieval-augmented generation (RAG) on Azure AI Search, deployed with Docker. I migrated the web app from Streamlit to React and kept extending it. I also enhanced the Microsoft Teams assistant that technicians can ask by text or voice: when the AI isn't confident in an answer, it routes the question to a subject-matter expert and returns their reply in the same chat.</p>
                                         </div>
-                                        <img class="img-fluid" src="assets/ai-knowledge-assistant.png" width="300" height="400" alt="Illustration of a maintenance manual turned into a knowledge graph and answered in a Teams chat" />
+                                        <div class="project-media project-media-fit" style="background:#e9f0f8"><img class="project-img" src="assets/ai-knowledge-assistant.png" alt="Illustration of a maintenance manual turned into a knowledge graph and answered in a Teams chat" /></div>
                                     </div>
                                 </div>
                             </div>
@@ -59,11 +70,11 @@
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
                                     <div class="d-flex flex-column flex-md-row align-items-center">
-                                        <div class="p-3 p-md-5">
-                                            <h2 class="fw-bolder fs-4">AI UX Insights Agent</h2>
+                                        <div class="p-3 p-md-5 project-text">
+                                            <h2 class="fw-bolder fs-4">Agentic UX Root-Cause Analyzer with Microsoft Clarity and MCP</h2>
                                             <p>Designed and built an AI-powered UX analytics feature that connects Microsoft Clarity to an internal delivery platform. It automatically finds problem pages, such as rage clicks, dead clicks and script errors, and pairs each one with the session recording of the user's journey. I developed an LLM agent with the Model Context Protocol (MCP), Python, FastAPI and PostgreSQL that explains the likely root cause of each issue and suggests clear next steps. It also ranks issues by priority, creates backlog tasks automatically and strips out personal data first, so developers can go straight to the fix instead of spending hours investigating.</p>
                                         </div>
-                                        <img class="img-fluid" src="assets/ai-ux-insights-agent.png" width="300" height="400" alt="Illustration of rage clicks on a web page analyzed by an AI agent into prioritized backlog tasks" />
+                                        <div class="project-media project-media-fit" style="background:#f4f0fb"><img class="project-img" src="assets/ai-ux-insights-agent.png" alt="Illustration of rage clicks on a web page analyzed by an AI agent into prioritized backlog tasks" /></div>
                                     </div>
                                 </div>
                             </div>
@@ -71,11 +82,11 @@
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
                                     <div class="d-flex flex-column flex-md-row align-items-center">
-                                        <div class="p-3 p-md-5">
-                                            <h2 class="fw-bolder fs-4">Jev Model Evaluation</h2>
+                                        <div class="p-3 p-md-5 project-text">
+                                            <h2 class="fw-bolder fs-4">Benchmarking Jev vs. Claude for Support-Ticket Routing</h2>
                                             <p>Evaluated Jev, TypeSafe's typed-judgment AI model, for routing service request tickets to the right service catalog item and group, comparing it with Claude Sonnet, Claude Haiku, an open-weight model and rule-based baselines. I built a Python evaluation pipeline that logs every call's predictions, confidence, tokens, latency and cost to SQLite and generates reports from them. On an 80-ticket test set, Jev reached 95.0% accuracy versus 92.5% for Claude Sonnet, at about 1/73 of the cost and about 12&times; lower latency (130 ms vs. 1,560 ms).</p>
                                         </div>
-                                        <img class="img-fluid" src="assets/jev-model-evaluation.png" width="300" height="400" alt="Illustration of support tickets routed to catalog items with an accuracy and cost comparison chart" />
+                                        <div class="project-media project-media-fit" style="background:#e9f5f1"><img class="project-img" src="assets/jev-model-evaluation.png" alt="Illustration of support tickets routed to catalog items with an accuracy and cost comparison chart" /></div>
                                     </div>
                                 </div>
                             </div>
@@ -83,11 +94,11 @@
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
                                     <div class="d-flex flex-column flex-md-row align-items-center">
-                                        <div class="p-3 p-md-5">
-                                            <h2 class="fw-bolder fs-4">Salesforce Agentforce Sales Agent</h2>
+                                        <div class="p-3 p-md-5 project-text">
+                                            <h2 class="fw-bolder fs-4">Agentforce Website Sales Agent: From Visitor to Booked Meeting</h2>
                                             <p>Designed and built a proof of concept Salesforce Agentforce Sales Agent for the company website that turns passive website traffic into booked meetings in real time. It qualifies inbound leads, answers questions about the company's services and schedules meetings, reducing reliance on static lead forms. I grounded its answers in verified company data by configuring Salesforce Data 360 and RAG over curated knowledge bases, and built custom Salesforce Flows and Prompt Templates that create Lead records, assign follow-up tasks to sales reps and book meetings directly. I also defined the agent's topics, natural-language instructions and guardrails, and customized the chat UI for a smooth conversation and handoff to sales representatives.</p>
                                         </div>
-                                        <img class="img-fluid" src="assets/agentforce-sales-agent.png" width="300" height="400" alt="Illustration of a website chat agent qualifying a lead and booking a meeting" />
+                                        <div class="project-media project-media-fit" style="background:#eaf5fe"><img class="project-img" src="assets/agentforce-sales-agent.png" alt="Illustration of a website chat agent qualifying a lead and booking a meeting" /></div>
                                     </div>
                                 </div>
                             </div>
@@ -95,12 +106,12 @@
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
                                     <div class="d-flex flex-column flex-md-row align-items-center">
-                                        <div class="p-3 p-md-5">
-                                            <h2 class="fw-bolder fs-4">MealMaster AI Chatbot</h2>
+                                        <div class="p-3 p-md-5 project-text">
+                                            <h2 class="fw-bolder fs-4">MealMaster: RAG-Powered AI Meal-Planning Chatbot</h2>
                                             <p>Co-developed MealMaster, an AI-powered meal planning website featuring a chatbot interface built with Gradio. Built a retrieval-augmented generation (RAG) system using LangChain, integrating nutritional and dietary 
                                                  datasets to deliver tailored recipe recommendations through a seamless, user-centric experience. </p>
                                             </div>
-                                        <img class="img-fluid" src="assets/mealmasterAI.png" alt="..." />
+                                        <div class="project-media project-media-fit" style="background:#fcefe5"><img class="project-img" src="assets/mealmasterAI.png" alt="MealMaster chatbot logo" /></div>
                                     </div>
                                 </div>
                             </div>
@@ -108,12 +119,12 @@
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
                                     <div class="d-flex flex-column flex-md-row align-items-center">
-                                        <div class="p-3 p-md-5">
-                                            <h2 class="fw-bolder fs-4">NEST Virtual Makerspace</h2>
+                                        <div class="p-3 p-md-5 project-text">
+                                            <h2 class="fw-bolder fs-4">NEST: Virtual Makerspace for Student Collaboration</h2>
                                             <p>Designed a Figma prototype of NEST, a virtual makerspace for Georgia Tech students to collaborate, brainstorm, and request feedback around self-improvement.
                                                 Applied a user-centered design process including user research, usability testing, and iterative prototyping.</p>
                                             </div>
-                                        <img class="img-fluid" src="assets/NEST.png" alt="..." />
+                                        <div class="project-media project-media-cover"><img class="project-img" src="assets/NEST.png" alt="NEST virtual makerspace prototype" /></div>
                                     </div>
                                 </div>
                             </div>
@@ -121,12 +132,12 @@
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
                                     <div class="d-flex flex-column flex-md-row align-items-center">
-                                        <div class="p-3 p-md-5">
-                                            <h2 class="fw-bolder fs-4">MEL: Math Ensemble Learning</h2>
+                                        <div class="p-3 p-md-5 project-text">
+                                            <h2 class="fw-bolder fs-4">MEL: Math Ensemble Learning with a Fine-Tuned Mistral Model</h2>
                                             <p>Fine-tuned a Mistral model on mathematical reasoning datasets using Hugging Face,
                                                  TensorFlow, and PyTorch, and built an ensemble model to improve reasoning accuracy and robustness through comparative performance analysis.</p>
                                             </div>
-                                        <img class="img-fluid" src="assets/Mistral.jpg" alt="..." />
+                                        <div class="project-media project-media-cover"><img class="project-img" src="assets/Mistral.jpg" alt="Mistral model artwork" /></div>
                                     </div>
                                 </div>
                             </div>
@@ -134,13 +145,13 @@
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
                                     <div class="d-flex flex-column flex-md-row align-items-center">
-                                        <div class="p-3 p-md-5">
-                                            <h2 class="fw-bolder fs-4">VIP - Smart City Infrastructure</h2>
+                                        <div class="p-3 p-md-5 project-text">
+                                            <h2 class="fw-bolder fs-4">Automated Crash-Diagram Tool for GDOT (Smart City VIP Research)</h2>
                                             <p>Member of the Crash Diagram sub-team. Collaborating and developing an automated tool to assist GDOT Engineers in
                                                 inputting and accessing crash data. Developed an online tool using Python libraries like Matplotlib, NumPy, and Bezier that outputs crash diagram for specified
                                                 intersection.</p>
                                         </div>
-                                        <img class="img-fluid" src="assets/vip 2.jpg.png" alt="..." />
+                                        <div class="project-media project-media-cover"><img class="project-img" src="assets/vip 2.jpg.png" alt="Smart city intersection crash diagram" /></div>
                                     </div>
                                 </div>
                             </div>
@@ -148,13 +159,13 @@
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
                                     <div class="d-flex flex-column flex-md-row align-items-center">
-                                        <div class="p-3 p-md-5">
-                                            <h2 class="fw-bolder fs-4">Customer Churn Prediction Model</h2>
+                                        <div class="p-3 p-md-5 project-text">
+                                            <h2 class="fw-bolder fs-4">Interpretable Customer Churn Prediction and Segmentation</h2>
                                             <p>Collaborated as a team in CS 7641 (Machine Learning) to develop a Customer Churn Prediction model that can be utilized by
                                                 Telecomm Companies. Developed the model using supervised and unsupervised learning algorithms and models like the PCA algorithm, Random
                                                 Forest, and SVM models.</p>
                                         </div>
-                                        <img class="img-fluid" src="assets/customer churn.png" alt="..." />
+                                        <div class="project-media project-media-fit" style="background:#bad5e6"><img class="project-img" src="assets/customer churn.png" alt="Illustration of a customer and an AI assistant" /></div>
                                     </div>
                                 </div>
                             </div>
@@ -162,14 +173,14 @@
                             <div class="card overflow-hidden shadow rounded-4 border-0">
                                 <div class="card-body p-0">
                                     <div class="d-flex flex-column flex-md-row align-items-center">
-                                        <div class="p-3 p-md-5">
-                                            <h2 class="fw-bolder fs-4">Foresee Your Route App - UI Design</h2>
+                                        <div class="p-3 p-md-5 project-text">
+                                            <h2 class="fw-bolder fs-4">Foresee Your Route: Comfort-First Route Planner for Runners</h2>
                                             <p>Designed a route planning app named Forsee Your Route as a team for CS 3790 (User Interface Design), which provides
                                                 route-planning features for runs that make comfort-centric information.
                                                 Conducted in-depth research, interviews, and analysis were conducted to develop the app, and Figma was used to design the
                                                 application</p>
                                         </div>
-                                        <img class="img-fluid" src="assets/uiux.png" alt="..." />
+                                        <div class="project-media project-media-cover"><img class="project-img" src="assets/uiux.png" alt="Foresee Your Route app design" /></div>
                                     </div>
                                 </div>
                             </div>
